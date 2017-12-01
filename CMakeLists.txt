@@ -1,9 +1,9 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.5)
 
 project(tinyxml2_vendor)
 
 list(INSERT CMAKE_MODULE_PATH 0 "${CMAKE_CURRENT_SOURCE_DIR}/cmake/Modules")
-find_package(tinyxml2)
+find_package(tinyxml2 QUIET)
 
 if(NOT tinyxml2_FOUND)
   # If TinyXMl2 was not found, download and build from source
