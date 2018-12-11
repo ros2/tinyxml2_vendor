@@ -17,13 +17,12 @@ else()
   find_library(TINYXML2_LIBRARY tinyxml2)
 
   include(FindPackageHandleStandardArgs)
-  find_package_handle_standard_args(tinyxml2
-    FOUND_VAR TinyXML2_FOUND
-    DEFAULT_MSG TINYXML2_LIBRARY TINYXML2_INCLUDE_DIR)
+  find_package_handle_standard_args(TinyXML2 DEFAULT_MSG TINYXML2_LIBRARY TINYXML2_INCLUDE_DIR)
 
   mark_as_advanced(TINYXML2_INCLUDE_DIR TINYXML2_LIBRARY)
 endif()
 
+# TODO: Determine if this is necessary with mixed-case find_package_handle_standard_args.
 if(NOT TinyXML2_INCLUDE_DIRS)
   set(TinyXML2_INCLUDE_DIRS ${TINYXML2_INCLUDE_DIR})
 endif()
