@@ -6,10 +6,14 @@
 find_package(TinyXML2 CONFIG QUIET)
 if(TinyXML2_FOUND)
   message(STATUS "Found TinyXML2 via Config file: ${TinyXML2_DIR}")
-  if(NOT TINYXML2_LIBRARY AND TARGET tinyxml2)
+  if(NOT TINYXML2_LIBRARY)
     # in this case, we're probably using TinyXML2 version 5.0.0 or greater
     # in which case tinyxml2 is an exported target and we should use that
-    set(TINYXML2_LIBRARY tinyxml2)
+    if(TARGET tinyxml2)
+      set(TINYXML2_LIBRARY tinyxml2)
+    elseif(TARGET tinyxml2::tinyxml2)
+      set(TINYXML2_LIBRARY tinyxml2::tinyxml2)
+    endif()
   endif()
 else()
   find_path(TINYXML2_INCLUDE_DIR NAMES tinyxml2.h)
