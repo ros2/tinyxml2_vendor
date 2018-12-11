@@ -22,7 +22,7 @@ else()
   find_package_handle_standard_args(tinyxml2 DEFAULT_MSG TINYXML2_LIBRARY TINYXML2_INCLUDE_DIR)
 
   mark_as_advanced(TINYXML2_INCLUDE_DIR TINYXML2_LIBRARY)
-  set(TinyXML2_FOUND tinyxml2_FOUND)
+  set(TinyXML2_FOUND ${tinyxml2_FOUND})
 endif()
 
 if(NOT TinyXML2_INCLUDE_DIRS)
