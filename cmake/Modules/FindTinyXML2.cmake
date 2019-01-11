@@ -24,10 +24,9 @@ else()
   find_package_handle_standard_args(TinyXML2 DEFAULT_MSG TINYXML2_LIBRARY TINYXML2_INCLUDE_DIR)
 
   mark_as_advanced(TINYXML2_INCLUDE_DIR TINYXML2_LIBRARY)
-  set(TinyXML2_FOUND ${tinyxml2_FOUND})
 endif()
 
-# TODO: Determine if this is necessary with mixed-case find_package_handle_standard_args.
+# Set mixed case INCLUDE_DIRS and LIBRARY variables from upper case ones.
 if(NOT TinyXML2_INCLUDE_DIRS)
   set(TinyXML2_INCLUDE_DIRS ${TINYXML2_INCLUDE_DIR})
 endif()
