@@ -13,6 +13,10 @@ configure_file(tinyxml2_vendorConfig-version.cmake.in
 install(DIRECTORY cmake DESTINATION share/${PROJECT_NAME})
 
 install(FILES
+  "${CMAKE_CURRENT_SOURCE_DIR}/package.xml"
+  DESTINATION share/${PROJECT_NAME})
+
+install(FILES
   "${PROJECT_BINARY_DIR}/tinyxml2_vendorConfig.cmake"
   "${PROJECT_BINARY_DIR}/tinyxml2_vendorConfig-version.cmake"
   DESTINATION share/${PROJECT_NAME}/cmake)
