@@ -15,7 +15,7 @@ if(TinyXML2_FOUND)
       set(TINYXML2_LIBRARY tinyxml2::tinyxml2)
     endif()
   endif()
-  list(APPEND tinyxml2_TARGETS ${TINYXML2_LIBRARY})
+  list(APPEND TinyXML2_TARGETS ${TINYXML2_LIBRARY})
 else()
   find_path(TINYXML2_INCLUDE_DIR NAMES tinyxml2.h)
 
@@ -31,7 +31,7 @@ else()
     set_property(TARGET tinyxml2 PROPERTY IMPORTED_LOCATION ${TinyXML2_LIBRARIES})
     set_property(TARGET tinyxml2 PROPERTY INCLUDE_DIRECTORIES ${TinyXML2_INCLUDE_DIRS})
   endif()
-  list(APPEND tinyxml2_TARGETS tinyxml2::tinyxml2)
+  list(APPEND TinyXML2_TARGETS tinyxml2::tinyxml2)
 endif()
 
 # Set mixed case INCLUDE_DIRS and LIBRARY variables from upper case ones.
