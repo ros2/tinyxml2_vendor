@@ -27,7 +27,7 @@ else()
   mark_as_advanced(TINYXML2_INCLUDE_DIR TINYXML2_LIBRARY)
 
   if(NOT TARGET tinyxml2::tinyxml2)
-    add_library(tinyxml2::tinyxml2 STATIC IMPORTED)
+    add_library(tinyxml2::tinyxml2 SHARED IMPORTED)
     set_property(TARGET tinyxml2::tinyxml2 PROPERTY IMPORTED_LOCATION ${TINYXML2_LIBRARY})
     set_property(TARGET tinyxml2::tinyxml2 PROPERTY INTERFACE_INCLUDE_DIRECTORIES ${TINYXML2_INCLUDE_DIR})
   endif()
