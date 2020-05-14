@@ -40,7 +40,7 @@ if(TinyXML2_FOUND)
         list(GET TINYXML2_LIBRARY 3 TINYXML2_LIBRARY_PATH)
       endif()
       if(NOT EXISTS ${TINYXML2_LIBRARY_PATH})
-        message(FATAL_ERROR "library file path ${TINYXML2_LIBRARY_PATH does not exist")
+        message(FATAL_ERROR "library file path ${TINYXML2_LIBRARY_PATH} does not exist")
       endif()
       
       add_library(tinyxml2::tinyxml2 UNKNOWN IMPORTED)
