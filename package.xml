@@ -10,10 +10,11 @@
     On others, it provides a fixed CMake module or even an ExternalProject build of tinyxml2.
   </description>
 
-  <maintainer email="audrow@openrobotics.org">Audrow Nash</maintainer>
+  <maintainer email="scott@openrobotics.org">Scott K Logan</maintainer>
 
   <license>Apache License 2.0</license>
 
+  <author email="audrow@openrobotics.org">Audrow Nash</author>
   <author email="michel@ekumenlabs.com">Michel Hidalgo</author>
   <author email="william@osrfoundation.org">William Woodall</author>
 
