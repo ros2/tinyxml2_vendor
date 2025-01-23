@@ -82,7 +82,7 @@ endif()
 # https://github.com/gazebosim/gz-cmake/blob/gz-cmake4_4.1.0/cmake/FindTINYXML2.cmake
 # If that is the case (and we detect it by checking the value of CMAKE_FIND_PACKAGE_NAME)
 # we also define a TINYXML2::TINYXML2 target for gz-cmake compatibility
-if(CMAKE_FIND_PACKAGE_NAME STREQUAL "TINYXML2" NOT TARGET TINYXML2::TINYXML2)
+if(CMAKE_FIND_PACKAGE_NAME STREQUAL "TINYXML2" AND NOT TARGET TINYXML2::TINYXML2)
   add_library(TINYXML2::TINYXML2 INTERFACE IMPORTED)
   set_property(TARGET tinyxml2::tinyxml2 PROPERTY INTERFACE_LINK_LIBRARIES tinyxml2::tinyxml2)
 endif()
