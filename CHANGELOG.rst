@@ -2,6 +2,11 @@
 Changelog for package tinyxml2_vendor
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Ensure that find_package(TINYXML2) defines TINYXML2::TINYXML2 even on case insensitive filesystems (`#22 <https://github.com/ros2/tinyxml2_vendor/issues/22>`_)
+* Contributors: Silvio Traversaro
+
 0.11.1 (2025-07-01)
 -------------------
 * Fix CMake deprecation (`#24 <https://github.com/ros2/tinyxml2_vendor/issues/24>`_)
