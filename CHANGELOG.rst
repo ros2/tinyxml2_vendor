@@ -2,6 +2,12 @@
 Changelog for package tinyxml2_vendor
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.11.3 (2025-11-18)
+-------------------
+* Deprecation warning in package.xml (`#26 <https://github.com/ros2/tinyxml2_vendor//issues/26>`_)
+  Co-authored-by: Michal Sojka <michal.sojka@cvut.cz>
+* Contributors: Alejandro Hernández Cordero
+
 0.11.2 (2025-07-29)
 -------------------
 * Ensure that find_package(TINYXML2) defines TINYXML2::TINYXML2 even on case insensitive filesystems (`#22 <https://github.com/ros2/tinyxml2_vendor/issues/22>`_)
