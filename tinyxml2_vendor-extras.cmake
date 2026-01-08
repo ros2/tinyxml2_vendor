@@ -16,6 +16,27 @@ list(INSERT CMAKE_MODULE_PATH 0 "${tinyxml2_vendor_DIR}/Modules")
 
 if(TinyXML2_FOUND AND NOT TARGET tinyxml2::tinyxml2)
   message(STATUS "TinyXML2 was already found when tinyxml2_vendor was included, adding missing imported target tinyxml2::tinyxml2")
+
+  # In some case, we need to get different case variants
+  if(NOT DEFINED TINYXML2_LIBRARY)
+    if(DEFINED TinyXML2_LIBRARY)
+      set(TINYXML2_LIBRARY ${TinyXML2_LIBRARY})
+    elseif(DEFINED TinyXML2_LIBRARIES)
+      set(TINYXML2_LIBRARY ${TinyXML2_LIBRARIES})
+    else()
+      message(FATAL_ERROR "TinyXML2_LIBRARY variable is not defined")
+    endif()
+  endif()
+  if(NOT DEFINED TINYXML2_INCLUDE_DIR)
+    if(DEFINED TinyXML2_INCLUDE_DIR)
+      set(TINYXML2_INCLUDE_DIR ${TinyXML2_INCLUDE_DIR})
+    elseif(DEFINED TinyXML2_INCLUDE_DIRS)
+      set(TINYXML2_INCLUDE_DIR ${TinyXML2_INCLUDE_DIRS})
+    else()
+      message(FATAL_ERROR "TinyXML2_INCLUDE_DIR variable is not defined")
+    endif()
+  endif()
+
   list(LENGTH TINYXML2_LIBRARY TINYXML_LIBRARY_LIST_LENGTH)
   # If there is just one item, we assume it's the path to the tinyxml2 library
   if(${TINYXML_LIBRARY_LIST_LENGTH} EQUAL 1)
